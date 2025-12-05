@@ -109,15 +109,26 @@ input[type="file"] {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+    align-items: center; 
+    position: relative; 
+}
+
+/* KHU VỰC BỌC INPUT & SỐ THỐNG KÊ (Đã thêm vào HTML) */
+.input-wrapper {
+    flex-grow: 1;
+    position: relative; /* Điểm neo cho định vị tuyệt đối */
+    min-width: 200px;
 }
 
 input[type="text"] {
+    width: 100%; /* Chiếm hết chiều rộng của input-wrapper */
     padding: 12px;
     border-radius: 6px;
     border: 1px solid #ccc;
-    flex-grow: 1;
     font-size: 16px;
-    min-width: 200px;
+    box-sizing: border-box;
+    /* Thêm padding phải để số thống kê không che chữ */
+    padding-right: 70px; 
 }
 
 input[type="text"]:focus {
@@ -135,10 +146,31 @@ input[type="text"]:focus {
     border-radius: 6px;
     cursor: pointer;
     white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .copy-button:hover {
     background-color: #e36d0d;
+}
+
+/* --- CUSTOM CSS: HIỂN THỊ SỐ DÒNG TÌM THẤY (ĐỊNH VỊ BÊN TRONG INPUT) --- */
+#resultStats {
+    /* ĐẶT VỊ TRÍ TUYỆT ĐỐI BÊN TRONG INPUT-WRAPPER */
+    position: absolute;
+    right: 5mm; /* Cách lề phải 5mm */
+    top: 50%;
+    transform: translateY(-50%);
+    
+    /* STYLE: KHÔNG NỀN, KHÔNG VIỀN */
+    background-color: transparent; 
+    color: var(--primary-color); 
+    padding: 0; 
+    font-weight: bold;
+    font-size: 16px;
+    white-space: nowrap;
+    border: none; 
+    box-shadow: none; 
+    z-index: 20; /* Đảm bảo nằm trên input */
 }
 
 /* --- KHU VỰC CHỨA BẢNG (QUAN TRỌNG NHẤT) --- */
@@ -226,12 +258,9 @@ input[type="text"]:focus {
 
 /* Highlight Khối thi */
 .highlight-khoithi {
-    background-color: #fd7e14;
-    color: white;
+    color: var(--error-color); /* Chữ màu đỏ */
     font-weight: bold;
-    padding: 2px 5px;
-    border-radius: 3px;
-    display: inline-block;
+    padding: 0 2px;
 }
 
 /* Ẩn các cột không cần thiết */
