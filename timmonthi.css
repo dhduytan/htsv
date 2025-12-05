@@ -137,11 +137,10 @@ input[type="text"]:focus {
 }
 
 .copy-button {
-    padding: 12px 25px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 1px;
     font-weight: 600;
-    background-color: #fd7e14;
-    color: white;
+    color: red;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -150,7 +149,7 @@ input[type="text"]:focus {
 }
 
 .copy-button:hover {
-    background-color: #e36d0d;
+    background-color: #f7a969;
 }
 
 /* --- CUSTOM CSS: HIỂN THỊ SỐ DÒNG TÌM THẤY (ĐỊNH VỊ BÊN TRONG INPUT) --- */
